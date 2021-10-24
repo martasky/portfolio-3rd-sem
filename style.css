@@ -47,7 +47,7 @@ h2 {
 }
 h1 {
   font-weight: 900;
-  font-size: 6.3vw;
+  font-size: 5.5vw;
   line-height: 6.3vw;
   margin-bottom: 0.6em;
   font-family: var(--title-font);
@@ -104,14 +104,7 @@ h3,
   text-decoration: none;
   color: var(--primary-text-color);
 }
-#portrait {
-  align-self: center;
-  justify-self: center;
-}
-#portrait img {
-  width: 90%;
-  height: 100vh;
-}
+
 section img {
   width: 100%;
 }
@@ -410,7 +403,7 @@ body {
 .menu {
   /*   display: none; */
   position: fixed;
-
+  z-index: 100;
   left: 0;
   top: 0;
   width: 100vw;
@@ -524,7 +517,43 @@ body {
   height: 30px;
   width: 30px;
 }
-
-.big_cursor {
-  background-image: url(assets/big_cursor.svg);
+.path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: dash 5s linear forwards;
+}
+.path2 {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+#line {
+  width: 90%;
+  height: 100vh;
+  position: absolute;
+  top: 3vw;
+  left: 5vw;
+  z-index: 1;
+  pointer-events: none;
+}
+#mylinetobedrawn {
+}
+#portrait {
+  align-self: center;
+  justify-self: center;
+}
+#portrait svg {
+  width: 90%;
+  height: 100vh;
+}
+#draw {
+}
+#banner {
 }
