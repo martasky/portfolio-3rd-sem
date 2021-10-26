@@ -3,28 +3,27 @@
 window.addEventListener("DOMContentLoaded", loadSvg);
 
 async function loadSvg() {
-  let response = await fetch("assets/wholelineartwork.svg");
+  let response = await fetch("assets/lineartme.svg");
   let mySvgData = await response.text();
-  document.querySelector("#line").innerHTML = mySvgData;
+  document.querySelector("#portrait").innerHTML = mySvgData;
   drawSvg();
 }
 
 function drawSvg() {
   document.querySelectorAll("path").forEach((path) => {
-    if (path.id != "draw") {
-      path.setAttribute("class", "path");
+    path.setAttribute("class", "path");
+    path.setAttribute("fill", "none");
+    path.setAttribute("stroke", "var(--primary-text-color");
+    path.setAttribute("stroke-width", "2");
+    path.setAttribute("pathLength", "1");
+    /*  else {
+      path.setAttribute("class", "path1");
       path.setAttribute("fill", "none");
       path.setAttribute("stroke", "var(--primary-text-color");
       path.setAttribute("stroke-width", "2");
-      path.setAttribute("pathLength", "1");
-    } else {
-      path.setAttribute("class", "path2");
-      path.setAttribute("fill", "none");
-      path.setAttribute("stroke", "var(--primary-text-color");
-      path.setAttribute("stroke-width", "2");
-      /* path.setAttribute("pathLength", "1"); */
+      path.setAttribute("pathLength", "1"); */
 
-      // Get the id of the <path> element and the length of <path>
+    /*    // Get the id of the <path> element and the length of <path>
       let line = document.querySelector("#draw");
       let length = line.getTotalLength();
 
@@ -47,7 +46,6 @@ function drawSvg() {
 
         // Reverse the drawing (when scrolling upwards)
         line.style.strokeDashoffset = length - draw;
-      }
-    }
+      } */
   });
 }

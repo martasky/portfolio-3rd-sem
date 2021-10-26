@@ -84,6 +84,7 @@ h3,
   justify-self: end;
   display: grid;
   place-items: center;
+  cursor: pointer;
 }
 #menu_btn img {
   width: 50%;
@@ -145,7 +146,7 @@ section h3 {
   padding-bottom: 2rem;
 }
 .empty {
-  height: 400px;
+  height: 300px;
   border-bottom: 2px solid var(--line-color);
   border-right: 2px solid var(--line-color);
   border-left: 2px solid var(--line-color);
@@ -155,7 +156,7 @@ section h3 {
   grid-column: 2;
   margin-right: 1.5rem;
   margin-left: 0;
-  height: 600px;
+  height: 300px;
 }
 
 .horizontal {
@@ -173,15 +174,16 @@ section h3 {
 }
 #banner {
   white-space: nowrap;
-  border-top: 2px solid var(--line-color);
-  border-bottom: 2px solid var(--line-color);
+  /*   border-top: 2px solid var(--line-color);
+  border-bottom: 2px solid var(--line-color); */
   padding: 2rem;
 }
 .vertical1 {
-  height: 400px;
+  height: 300px;
 
   border-right: 2px solid var(--line-color);
   border-left: 2px solid var(--line-color);
+  border-bottom: 2px solid var(--line-color);
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
@@ -190,6 +192,7 @@ section h3 {
 
   border-right: 2px solid var(--line-color);
   border-left: 2px solid var(--line-color);
+  border-top: 2px solid var(--line-color);
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
@@ -330,6 +333,11 @@ p span {
   text-transform: uppercase;
   color: var(--primary-text-color);
   font-family: var(--title-font);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
 .brand_wrapper {
   padding: 2em;
@@ -375,6 +383,7 @@ p span {
 
   border-top: 2px solid var(--line-color);
 }
+
 /* .next div:first-child {
   width: 616px;
   border-right: 2px solid var(--line-color);
@@ -450,6 +459,7 @@ body {
 
   display: grid;
   place-items: center;
+  cursor: pointer;
 }
 .hidden {
   visibility: hidden;
@@ -522,10 +532,10 @@ body {
   stroke-dashoffset: 1;
   animation: dash 5s linear forwards;
 }
-.path2 {
+/* .path2 {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-}
+} */
 @keyframes dash {
   from {
     stroke-dashoffset: 1;
@@ -534,7 +544,15 @@ body {
     stroke-dashoffset: 0;
   }
 }
-#line {
+#portrait {
+  align-self: center;
+  justify-self: center;
+}
+#portrait svg {
+  width: 90%;
+  height: 100vh;
+}
+/* #line {
   width: 90%;
   height: 100vh;
   position: absolute;
@@ -545,15 +563,147 @@ body {
 }
 #mylinetobedrawn {
 }
-#portrait {
-  align-self: center;
-  justify-self: center;
-}
-#portrait svg {
-  width: 90%;
-  height: 100vh;
-}
+
 #draw {
 }
 #banner {
+}
+ */
+
+#banner {
+  animation: move-in-loop 10s infinite linear;
+}
+@keyframes move-in-loop {
+  from {
+    transform: translateX(130vw);
+  }
+  to {
+    transform: translateX(-130vw);
+  }
+}
+body {
+  overflow-x: hidden;
+}
+@media only screen and (max-width: 600px) {
+  .about_image {
+    bottom: 50vw;
+  }
+  #about {
+    display: block;
+  }
+  .intro {
+    height: 25vw;
+    border-right: none;
+  }
+  .show_product img {
+    margin-bottom: 5em;
+  }
+  .next {
+    height: 15vw;
+  }
+  .logo {
+    width: 20vw;
+    font-size: 2vw;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #menu_btn {
+    width: 20vw;
+    height: 20vw; /* 
+    align-self: flex-end; */
+  }
+  .menu_open_btn {
+    width: 20vw;
+    height: 20vw;
+  }
+  .menu_content {
+    display: flex;
+    flex-direction: column;
+  }
+  .menu_about {
+    order: -1;
+    border-left: none;
+    border-bottom: 2px solid var(--menu-line-color);
+    padding-bottom: 3em;
+  }
+  header {
+    /*     display: flex;
+    flex-direction: column; */
+
+    height: 100%;
+  }
+  #portrait svg {
+    height: 100vw;
+  }
+  h2 {
+    padding-bottom: 4em;
+  }
+  .empty {
+    height: 100px;
+  }
+  .section2 .empty {
+    height: 150px;
+  }
+  .vertical1 {
+    height: 100px;
+  }
+  .vertical2 {
+    height: 100px;
+  }
+  #contact_wrapper {
+    height: 150px;
+  }
+  #contact_wrapper a li img {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+  }
+  .about_image {
+    top: 160vw;
+  }
+  .logo {
+    width: 20vw;
+    font-size: 2vw;
+  }
+  .next {
+    height: 20vw;
+  }
+  .show_product img {
+    margin-bottom: 5em;
+  }
+}
+@media only screen and (min-width: 901px) and (max-width: 1600px) {
+  .empty {
+    height: 200px;
+  }
+  .section2 .empty {
+    height: 200px;
+  }
+  .vertical1 {
+    height: 200px;
+  }
+  .vertical2 {
+    height: 100px;
+  }
+  #contact_wrapper {
+    height: 400px;
+  }
+  #contact_wrapper a li img {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+  }
+  .about_image {
+    top: 125vw;
+  }
+  .logo {
+    /* width: 20vw; */
+  }
+  .next {
+    height: 20vw;
+  }
+  .show_product img {
+    margin-bottom: 10em;
+  }
 }
