@@ -244,7 +244,7 @@ footer .vertical2 {
   border: none;
 }
 .arrow {
-  width: 7%;
+  width: 130px;
 
   animation: scale-img 1s infinite alternate;
   padding: 3em;
@@ -720,6 +720,9 @@ body {
   .show_product img {
     margin-bottom: 5em;
   }
+  /*  .arrow {
+    width: 130px;
+  } */
 }
 @media only screen and (min-width: 901px) and (max-width: 1600px) {
   .empty {
@@ -754,4 +757,7 @@ body {
   .show_product img {
     margin-bottom: 10em;
   }
+  /*  .arrow {
+    width: 8.5vw;
+  } */
 }
