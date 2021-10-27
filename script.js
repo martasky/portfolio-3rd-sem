@@ -55,6 +55,10 @@ function openMenu() {
   body.style.top = "";
   window.scrollTo(0, parseInt(scrollY || "0") * -1); */
   document.querySelector(".menu").classList.remove("hidden");
+  document
+    .querySelector(".menu")
+    .style.setProperty("animation", "slide-in 0.2s forwards");
+
   let cursor = document.querySelector(".cursor");
   cursor.style.background = "var(--bg--color)";
   /* 
@@ -71,6 +75,7 @@ function closeMenu() {
   /* let body = document.querySelector("body");
   body.style.position = "";
   body.style.top = ""; */
+  document.querySelector(".menu").style.removeProperty("animation");
 }
 
 function createImage(a, event) {
@@ -218,3 +223,81 @@ function defaultCursor() {
   cursor.style.backgroundImage = "url(assets/gradient-bg.svg)";
   cursor.style.transform = "scale(1,1)";
 }
+
+/* gsap.to("#header_text_wrapper h1", {
+  duration: 5,
+  x: "45vw",
+  scrollTrigger: {
+    trigger: "#header_text_wrapper h1",
+    scrub: true,
+    markers: true,
+
+  },
+});
+ */
+
+let time1 = gsap.timeline({
+  repeat: 0,
+});
+/* gsap.from("#header_text_wrapper h1", {
+  x: 200,
+  opacity: 0,
+}),
+  gsap.from("#header_text_wrapper h2", {
+    x: 200,
+    opacity: 0,
+  }), */
+time1
+  .from("#header_text_wrapper h1", {
+    x: 200,
+    duration: 0.5,
+    opacity: 0,
+
+    ease: "expo",
+  })
+  .from("#header_text_wrapper h2", {
+    x: 200,
+
+    duration: 0.5,
+    opacity: 0,
+
+    ease: "expo",
+    onComplete: drawSvg,
+  });
+
+function drawSvg() {
+  document.querySelectorAll("path").forEach((path) => {
+    path.setAttribute("class", "path");
+
+    path.setAttribute("stroke", "var(--primary-text-color");
+    path.setAttribute("stroke-width", "2");
+    path.setAttribute("pathLength", "1");
+  });
+}
+
+/* gsap.from(".section1 h3", {
+  duration: 1,
+  opacity: 0,
+  y: 100,
+  ScrollTrigger: {
+    trigger: ".section1 h3",
+    scrub: true,
+
+    start: "top 75%",
+    end: "bottom 25%",
+  },
+}); */
+
+gsap.registerPlugin(ScrollTrigger);
+
+document.querySelectorAll("#frontpage h3").forEach((h3) => {
+  gsap.from(h3, {
+    scrollTrigger: {
+      trigger: h3,
+      toggleActions: "restart none none none",
+    },
+    duration: 2,
+    opacity: 0,
+    /*   y: 100, */
+  });
+});

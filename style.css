@@ -229,6 +229,44 @@ footer .vertical2 {
   border-top: 2px solid var(--line-color);
   border-right: none;
   border-left: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.vertical2 p {
+  font-family: var(--copy-font);
+  font-size: 1vw;
+  align-self: flex-end;
+  padding: 1em;
+  color: var(--line-color);
+}
+.vertical2 a {
+  border: none;
+}
+.arrow {
+  width: 7%;
+
+  animation: scale-img 1s infinite alternate;
+  padding: 3em;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  /*   align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em; */
+}
+/* .arrow img {
+  width: 40%;
+  color: var(--primary-text-color);
+  animation: scale-img 1s infinite alternate;
+} */
+@keyframes scale-img {
+  to {
+    transform: scale(1.2, 1.2);
+  }
 }
 
 /********* About ***********/
@@ -464,6 +502,16 @@ body {
 .hidden {
   visibility: hidden;
 }
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-50vw);
+    animation-timing-function: cubic-bezier(0.78, 0.11, 0, 1.06);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 .menu_projects div {
   font-family: var(--copy-font);
   text-transform: uppercase;
@@ -530,7 +578,7 @@ body {
 .path {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  animation: dash 5s linear forwards;
+  animation: dash 2s linear forwards;
 }
 /* .path2 {
   stroke-dasharray: 1;
