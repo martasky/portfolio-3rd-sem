@@ -693,21 +693,26 @@ body {
   .section2 .horizontal {
     margin-left: 0.5rem;
   }
+
   .menu_projects a {
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 0.5rem;
   }
   .menu_projects div {
     padding: 0.5em;
   }
   .menu_projects h1 {
-    font-size: 3rem;
     padding: 0.5em;
-    padding-top: 1em;
-    padding-bottom: 1em;
+  }
+  .menu_about {
+    padding-bottom: 0;
+  }
+  .menu_about h1 {
+    padding-bottom: 1wm;
+    align-self: center;
   }
   .menu_content h1 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .project_page {
     margin: 0.5rem;
@@ -730,7 +735,8 @@ body {
     width: 100%;
   }
   .show_product p {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    padding-left: 2em;
   }
   #about {
     margin-left: 0.5rem;
@@ -744,13 +750,18 @@ body {
     height: max-content;
   }
   .about_text_wrapper p {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    padding-left: 2em;
   }
   .cursor {
     display: none;
   }
   #portrait svg {
     margin-left: 0.5em;
+  }
+  .arrow {
+    padding-right: 1em;
+    width: 100px;
   }
 }
 
@@ -772,7 +783,6 @@ body {
     order: -1;
     border-left: none;
     border-bottom: 2px solid var(--menu-line-color);
-    padding-bottom: 3em;
   }
   header {
     /*     display: flex;
