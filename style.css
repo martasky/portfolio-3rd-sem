@@ -235,7 +235,7 @@ footer .vertical2 {
 }
 .vertical2 p {
   font-family: var(--copy-font);
-  font-size: 1vw;
+  font-size: 1rem;
   align-self: flex-end;
   padding: 1em;
   color: var(--line-color);
@@ -632,12 +632,13 @@ body {
 body {
   overflow-x: hidden;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   .about_image {
     bottom: 50vw;
   }
   #about {
     display: block;
+    border-bottom: none;
   }
   .intro {
     height: 25vw;
@@ -652,6 +653,104 @@ body {
   .logo {
     width: 20vw;
     font-size: 2vw;
+  }
+  header,
+  footer {
+    margin: 0.5rem;
+  }
+  header {
+    margin-bottom: 0;
+  }
+  .section1 h3 {
+    margin-left: 0.5rem;
+  }
+  .section2 h3 {
+    margin-right: 0.5rem;
+  }
+  .empty {
+    margin-left: 0.5rem;
+  }
+  .horizontal {
+    margin-right: 0.5rem;
+  }
+  .vertical1 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  .vertical2 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  .vertical2 p {
+    font-size: 1rem;
+  }
+  footer {
+    margin-top: 0;
+  }
+  .section2 .empty {
+    margin-right: 0.5rem;
+  }
+  .section2 .horizontal {
+    margin-left: 0.5rem;
+  }
+  .menu_projects a {
+    font-size: 2rem;
+    padding: 0.5rem;
+  }
+  .menu_projects div {
+    padding: 0.5em;
+  }
+  .menu_projects h1 {
+    font-size: 3rem;
+    padding: 0.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  .menu_content h1 {
+    font-size: 3rem;
+  }
+  .project_page {
+    margin: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .brand_intro {
+    font-size: 1.2rem;
+    grid-column: 1/ -1;
+    width: 100%;
+  }
+  .link {
+    font-size: 1.5rem;
+  }
+  .show_product img {
+    padding-right: 0;
+    width: 90%;
+  }
+  .brand_img img {
+    width: 100%;
+  }
+  .show_product p {
+    font-size: 1rem;
+  }
+  #about {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  .intro {
+    font-size: 1.2rem;
+    line-height: normal;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    height: max-content;
+  }
+  .about_text_wrapper p {
+    font-size: 1rem;
+  }
+  .cursor {
+    display: none;
+  }
+  #portrait svg {
+    margin-left: 0.5em;
   }
 }
 
@@ -719,6 +818,9 @@ body {
   }
   .show_product img {
     margin-bottom: 5em;
+  }
+  .vertical2 p {
+    font-size: 1rem;
   }
   /*  .arrow {
     width: 130px;
